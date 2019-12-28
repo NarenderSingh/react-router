@@ -1,15 +1,21 @@
-import React from 'react';
-import './Navigation.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Navigation.css";
+import Home from "./Home";
+import Vitamin from "./Vitamin";
 
-const Navigation = (props) => (
+const Navigation = props => (
   <div id="myNav" className="overlay">
-    <a className="closebtn" onClick={() => props.closeNav()}>&times;</a>
+    <a className="closebtn" onClick={() => props.closeNav()}>
+      &times;
+    </a>
     <div className="overlay-content">
-      <a href="">Home</a>  
-      <a href="">Vitamin Juice</a>
-      <a href="">Clothing</a>
-      <a href="">Supplements</a>
-      <a href="">Contact</a>
+      <Link to="/" onClick={() => props.closeNav()}>
+        Home
+      </Link>
+      <Link to="/vitamin" onClick={() => props.closeNav()}>
+        Vitamin
+      </Link>
     </div>
   </div>
 );
