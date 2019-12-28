@@ -5,7 +5,9 @@ import "./App.css";
 import Home from "./components/Home";
 import Vitamin from "./components/Vitamin";
 import Navigation from "./components/Navigation";
+import ProductDetails from "./components/ProductDetails";
 import data from "./data/data.json";
+import Lost from "./components/Lost";
 
 class App extends Component {
   constructor(props) {
@@ -76,6 +78,18 @@ class App extends Component {
               render={props => <Home cards={this.state.cards} />}
             ></Route>
             <Route exact path="/vitamin" component={Vitamin}></Route>
+            <Route
+              exact
+              path="/product/:id"
+              render={props => {
+                let cardPosition = props.location.pathname.replace(
+                  "/product/",
+                  ""
+                );
+                return <ProductDetails card={this.state.cards[cardPosition]} />;
+              }}
+            />
+            <Route component={Lost} />
           </Switch>
         </div>
       </Router>

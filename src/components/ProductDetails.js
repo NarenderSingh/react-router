@@ -1,12 +1,11 @@
 import React from "react";
 import "./Card.css";
-import { Link } from "react-router-dom";
 
-const Card = props => (
-  <div className={props.card.animation}>
-    <Link to={`/product/${props.card.id}`}>
+const ProductDetails = props => {
+  return (
+    <div className={props.card.animation}>
       <div className="front">
-        <img src="juice.jpg" alt="Avatar" className="card-image" />
+        <img src="/juice.jpg" alt="Avatar" className="card-image" />
         <div className="container">
           <h3>{props.card.title}</h3>
           <h3>
@@ -15,8 +14,8 @@ const Card = props => (
           <p>{props.card.description}</p>
         </div>
       </div>
-    </Link>
-  </div>
-);
+    </div>
+  );
+};
 
-export default Card;
+export default ProductDetails;

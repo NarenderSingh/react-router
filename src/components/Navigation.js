@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navigation.css";
-import Home from "./Home";
-import Vitamin from "./Vitamin";
 
 const Navigation = props => (
   <div id="myNav" className="overlay">
